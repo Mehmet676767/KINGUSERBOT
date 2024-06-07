@@ -10,7 +10,7 @@ from ...modules.utilities import queues
 from ...modules.utilities.streams import *
 
 
-@app.on_message(cdx(["skp", "skip"]) & ~filters.private)
+@app.on_message(cdx(["skp", "atla", "skip"]) & ~filters.private)
 @sudo_users_only
 async def skip_stream(client, message):
     chat_id = message.chat.id
@@ -32,11 +32,11 @@ async def skip_stream(client, message):
                 type = check["type"]
                 stream = await run_stream(file, type)
                 await call.play(chat_id, stream)
-                return await eor(message, "**Stream Skipped!**")
+                return await eor(message, "**akış atlandı!**")
             elif status == Call.Status.IDLE:
-                await eor(message, "**Nothing Playing!**")
+                await eor(message, "**atlanacak şarkı yok!**")
         else:
-            await eor(message, "**I am Not in VC!**")
+            await eor(message, "**seste değilim!**")
     except Exception as e:
         print(f"Error: {e}")
         pass
