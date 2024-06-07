@@ -11,14 +11,14 @@ async def help_menu_logo(answer):
     if image:
         thumb_image = image
     else:
-        thumb_image = "https://te.legra.ph/file/11cfa74175b590014bd16.jpg"
+        thumb_image = "https://graph.org/file/8c1d6e4dd204afe8b6f98.jpg"
     button = paginate_plugins(0, plugs, "help")
     answer.append(
         InlineQueryResultPhoto(
             photo_url=f"{thumb_image}",
-            title="🥀 Help Menu ✨",
+            title="🥀 yardım menüsü✨",
             thumb_url=f"{thumb_image}",
-            description=f"🥀 Open Help Menu Of Branded-Userbot ✨...",
+            description=f"🥀 menü yardım açıldı yanıldı bot ✨...",
             caption=f"""
 **🥀 Welcome To Help Menu Of
 Branded Userbot » {__version__} ✨...
@@ -26,7 +26,7 @@ Branded Userbot » {__version__} ✨...
 Click On Below 🌺 Buttons To
 Get Userbot Commands.
 
-🌷Powered By : [Branded](https://t.me/BRANDED_PAID_CC).**
+🌷Powered By : [Branded](https://t.me/yanilgisohbet).**
             """,
             reply_markup=InlineKeyboardMarkup(button),
         )
@@ -39,15 +39,15 @@ async def help_menu_text(answer):
     button = paginate_plugins(0, plugs, "help")
     answer.append(
         InlineQueryResultArticle(
-            title="🥀 Help Menu ✨",
+            title="🥀 yardım menüsü ✨",
             input_message_content=InputTextMessageContent(f"""
-**🥀 Welcome To Help Menu Of
-Branded Userbot » {__version__} ✨...
+**🥀 hoş geldiniz 
+yanıldı Userbot » {__version__} ✨...
 
-Click On Below 🌺 Buttons To
-Get Userbot Commands.
+Aşağıdaki 🌺 Düğmelere Tıklayın
+Userbot Komutlarını Alma.
 
-🌷Powered By : [Branded](https://t.me/BRANDED_PAID_CC).**""",
+🌷Powered By : [Branded](https://t.me/yanilgisohbet).**""",
             disable_web_page_preview=True
             ),
             reply_markup=InlineKeyboardMarkup(button),
