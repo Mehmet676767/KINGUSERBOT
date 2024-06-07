@@ -10,12 +10,12 @@ async def get_call_stats(client, message):
     if chat_call:
         call_status = chat_call.status
         print(call_status)
-    # await m.edit(f"**🤖 Pinged !\nLatency:** `{ms}` ms")
+    # await m.edit(f"**🤖 ping gönderildi !\nLatency:** `{ms}` ms")
 
 
 
-__NAME__ = "status"
+__NAME__ = "durum"
 __MENU__ = """
-`.ping` - **Check call status
-Of Your Userbot Server.**
+`.ping` - **Arama durumunu kontrol edin
+Userbot Sunucunuzun.**
 """
