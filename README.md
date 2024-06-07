@@ -32,7 +32,7 @@
 
 
 <h3 align="center">
-    ─「 sᴜᴩᴩᴏʀᴛ 」─
+    ─「 DESTEK 」─
 </h3>
 
 <p align="center">
@@ -45,9 +45,9 @@
 
 
 <h2>🌐 Updates & Support</h2>
-<p title="Support">You can join Genius-Userbot's official Telegram channel and group on Telegram for any Genius-Userbot updates and support-related issues.</p>
+<p title="DESTEK">You can join Genius-Userbot's official Telegram channel and group on Telegram for any Genius-Userbot updates and support-related issues.</p>
 
-- Telegram Channel: [**`@BRANDED_PAID_CC`**](https://t.me/BRANDED_PAID_CC)
+- Telegram Channel: [**`YANILGI DESTEK TG`**](https://t.me/yanilgisohbet)
 
 - 
 <h2>📑 Acknowledgement / Credits</h2>
