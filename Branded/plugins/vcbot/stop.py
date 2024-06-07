@@ -7,25 +7,25 @@ from ...modules.mongo.streams import *
 from ...modules.utilities import queues
 
 
-@app.on_message(cdx(["stp"]) & ~filters.private)
+@app.on_message(cdx(["stp", "dur", "son"]) & ~filters.private)
 @sudo_users_only
 async def stop_stream(client, message):
     chat_id = message.chat.id
     try:
         a = await call.get_call(chat_id)
-        if (a.status == "playing"
-            or a.status == "paused"
+        if (a.status == "işleniyor"
+            or a.status == "akış kapandı"
         ):
             try:
                 queues.clear(chat_id)
             except QueueEmpty:
                 pass
             await call.change_stream(chat_id)
-            await eor(message, "**Stream Stopped!**")
-        elif a.status == "not_playing":
-            await eor(message, "**Nothing Playing!**")
+            await eor(message, "**akış durduruldu!**")
+        elif a.status == "sesli kapalı zaten":
+            await eor(message, "**durdurulacak akış yok!**")
     except GroupCallNotFound:
-        await eor(message, "**I am Not in VC!**")
+        await eor(message, "**seste değilim!**")
     except Exception as e:
         print(f"Error: {e}")
         
@@ -37,7 +37,7 @@ async def stop_stream_chat(client, message):
     chat_id = await get_chat_id(user_id)
     if chat_id == 0:
         return await eor(message,
-            "**🥀 No Stream Chat Set❗**"
+            "**🥀 akış yeni açıldı ❗**"
     )
     try:
         a = await call.get_call(chat_id)
