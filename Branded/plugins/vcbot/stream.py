@@ -12,11 +12,11 @@ from ...modules.utilities.streams import *
 
 # Audio Player
 
-@app.on_message(cdz(["ply", "play"]) & ~filters.private)
+@app.on_message(cdz(["ply", "play", "oynat"]) & ~filters.private)
 @sudo_users_only
 async def audio_stream(client, message):
     chat_id = message.chat.id
-    aux = await eor(message, "**Processing ...**")
+    aux = await eor(message, "**şarkı yükleniyor...**")
     calls = await call.calls
     chat_call = calls.get(chat_id)
     audio = (
@@ -30,14 +30,14 @@ async def audio_stream(client, message):
 
     try:
         if audio:
-            await aux.edit("Downloading ...")
+            await aux.edit("şarkı indiriliyor...")
             file = await client.download_media(
                 message.reply_to_message
             )
         else:
             if len(message.command) < 2:
                 return await aux.edit(
-                    "**🥀 ɢɪᴠᴇ ᴍᴇ sᴏᴍᴇ ǫᴜᴇʀʏ ᴛᴏ\nᴘʟᴀʏ ᴍᴜsɪᴄ ᴏʀ ᴠɪᴅᴇᴏ❗...**"
+                    "**🥀 bana müzik veya video oynatmak için \n bir soru sor❗...**"
                 )
             if "?si=" in message.text:
                 query = message.text.split(None, 1)[1].split("?si=")[0]
@@ -59,14 +59,14 @@ async def audio_stream(client, message):
                 position = await queues.put(
                     chat_id, file=file, type=type
                 )
-                await aux.edit(f"Queued At {position}")
+                await aux.edit(f"sıraya eklendi {position}")
         else:
             stream = await run_stream(file, type)
             try:
                 await call.play(chat_id, stream)
-                await aux.edit("Playing!")
+                await aux.edit("şarkı başladı 🇹🇷!")
             except NoActiveGroupCall:
-                return await aux.edit("No Active VC!")
+                return await aux.edit("sesli aktif değil!")
     except Exception as e:
         print(e)
         pass
@@ -74,11 +74,11 @@ async def audio_stream(client, message):
 
 # Video Player
 
-@app.on_message(cdz(["vply", "vplay"]) & ~filters.private)
+@app.on_message(cdz(["vply", "vplay", "voynat"]) & ~filters.private)
 @sudo_users_only
 async def video_stream(client, message):
     chat_id = message.chat.id
-    aux = await eor(message, "**Processing ...**")
+    aux = await eor(message, "**şarkı yükleniyor...**")
     calls = await call.calls
     chat_call = calls.get(chat_id)
     video = (
@@ -91,14 +91,14 @@ async def video_stream(client, message):
     type = "Video"
     try:
         if video:
-            await aux.edit("Downloading ...")
+            await aux.edit("indiriliyor ...")
             file = await client.download_media(
                 message.reply_to_message
             )
         else:
             if len(message.command) < 2:
                 return await aux.edit(
-                    "**🥀 ɢɪᴠᴇ ᴍᴇ sᴏᴍᴇ ǫᴜᴇʀʏ ᴛᴏ\nᴘʟᴀʏ ᴍᴜsɪᴄ ᴏʀ ᴠɪᴅᴇᴏ❗...**"
+                    "**🥀 bana müzik veya video oynatmak için \n bir soru sor❗...**"
                 )
             if "?si=" in message.text:
                 query = message.text.split(None, 1)[1].split("?si=")[0]
@@ -125,9 +125,9 @@ async def video_stream(client, message):
             stream = await run_stream(file, type)
             try:
                 await call.play(chat_id, stream)
-                await aux.edit("Playing!")
+                await aux.edit("şarkı başladı!")
             except NoActiveGroupCall:
-                return await aux.edit("No Active VC!")
+                return await aux.edit("sesli aktif!")
     except Exception as e:
         print(e)
         pass
