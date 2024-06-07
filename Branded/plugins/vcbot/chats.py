@@ -17,14 +17,14 @@ async def set_stream_chat(client, message):
                 chat = await app.get_chat(chat_id)
                 chat_id = chat.id
         except:
-            return await aux.edit("**Error !**")
+            return await aux.edit("**hata !**")
     if len(str(chat_id)) != 14:
-        return await aux.edit("Give Me Correct Chat ID !")
+        return await aux.edit("Bana Doğru Sohbet Kimliğini Ver !")
     try:
         add_chat = await set_chat_id(user_id, int(chat_id))
         if add_chat:
-            return await aux.edit("Already Set.")
-        return await aux.edit("Chat ID Added.")
+            return await aux.edit("Zaten Ayarlanmış.")
+        return await aux.edit("Sohbet Kimliği Eklendi.")
     except Exception as e:
         await aux.delete()
         print(f"Error: `{e}`")
