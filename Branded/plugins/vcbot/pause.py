@@ -4,7 +4,7 @@ from pyrogram import filters
 from pytgcalls.exceptions import GroupCallNotFound
 
 
-@app.on_message(cdx(["dur", "son"]) & ~filters.private)
+@app.on_message(cdx(["dur") & ~filters.private)
 @sudo_users_only
 async def pause_stream(client, message):
     chat_id = message.chat.id
