@@ -56,19 +56,19 @@ async def help_button(client, query):
     next_match = re.match(r"help_next\((.+?)\)", query.data)
     back_match = re.match(r"help_back", query.data)
     top_text = f"""
-**🥀 Welcome To Help Menu Of
-Branded Userbot » {__version__} ✨...
+**🥀 Yardım Menüsüne Hoş Geldiniz
+Yanılgı Userbot » {__version__} ✨...
 
 Click On Below 🌺 Buttons To
 Get Userbot Commands.
 
-🌷Powered By : [Branded](https://t.me/BRANDED_PAID_CC).**
+🌷Powered By : [YANILGI](https://t.me/yanilgisohbet).**
 """
     
     if plug_match:
         plugin = plug_match.group(1)
         text = (
-            "**🥀 Welcome To Help Menu Of:\n♨️ Plugin :** {}\n".format(
+            "**🥀 Yardım Menüsüne Hoş Geldiniz Of:\n♨️ Plugin :** {}\n".format(
                 plugs[plugin].__NAME__
             )
             + plugs[plugin].__MENU__
@@ -77,7 +77,7 @@ Get Userbot Commands.
             [
                 [
                     InlineKeyboardButton(
-                        text="↪️ Back", callback_data="help_back"
+                        text="↪️geri", callback_data="help_back"
                     )
                 ],
             ]
