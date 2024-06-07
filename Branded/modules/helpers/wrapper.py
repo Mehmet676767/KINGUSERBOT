@@ -40,7 +40,7 @@ def cb_wrapper(func):
             cb.from_user.id not in sudousers
         ):
             return await cb.answer(
-                "❎ You Are Not A Sudo User❗",
+                "❎ Sudo Kullanıcısı Değilsiniz❗",
                 cache_time=0,
                 show_alert=True,
             )
@@ -50,7 +50,7 @@ def cb_wrapper(func):
             except Exception:
                 print(format_exc())
                 return await cb.answer(
-                    f"❎ Something Went Wrong, Please Check Logs❗..."
+                    f"❎ Bir şeyler ters gitti, lütfen günlükleri kontrol edin❗..."
                 )
         
     return wrapper
@@ -67,8 +67,8 @@ def inline_wrapper(func):
                 button = [
                     [
                         InlineKeyboardButton(
-                            "💥 Deploy Branded Userbot ✨",
-                            url=f"https://github.com/WCGKING/KINGUSERBOT"
+                            "💥 DESTEK ✨",
+                            url=f"https://t.me/masaldestekkanal"
                         )
                     ]
                 ]
@@ -78,11 +78,11 @@ def inline_wrapper(func):
                     results=[
                         (
                             InlineQueryResultPhoto(
-                                photo_url=f"https://te.legra.ph/file/11cfa74175b590014bd16.jpg",
+                                photo_url=f"https://graph.org/file/8c1d6e4dd204afe8b6f98.jpg",
                                 title="🥀 Branded Userbot ✨",
-                                thumb_url=f"https://te.legra.ph/file/11cfa74175b590014bd16.jpg",
-                                description=f"🌷 Deploy Your Own Branded-Userbot 🌿...",
-                                caption=f"<b>🥀 Welcome » To » Branded 🌷\n✅ Userbot {__version__} ✨...</b>",
+                                thumb_url=f"https://graph.org/file/8c1d6e4dd204afe8b6f98.jpg",
+                                description=f"🌷 kaynak kod yakında paylaşılacak  🌿...",
+                                caption=f"<b>🥀 hoş geldiniz » To » yanılgı 🌷\n✅ kullanıcı bot {__version__} ✨...</b>",
                                 reply_markup=InlineKeyboardMarkup(button),
                             )
                         )
@@ -98,7 +98,7 @@ def inline_wrapper(func):
                             InlineQueryResultArticle(
                                 title="",
                                 input_message_content=InputTextMessageContent(
-                                    f"||**🥀 Please, Deploy Your Own Branded Userbot❗...\n\nRepo:** <i>https://github.com/WCGKING/KINGUSERBOT/</i>||"
+                                    f"||**🥀 destek için❗...\n\nmehmet bey:** <i>https://t.mehmetbeydiyeceksinizzz63</i>||"
                                 ),
                             )
                         )
