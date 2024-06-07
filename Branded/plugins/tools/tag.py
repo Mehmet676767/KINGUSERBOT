@@ -13,19 +13,19 @@ SPAM_CHATS = []
 
 
 @app.on_message(
-    filters.command(["all", "allmention", "mentionall", "tagall"], prefixes=["/", "@"])
+    filters.command(["utag", "stag", "tags", "mtag"], prefixes=["/", "@"])
      & ~filters.private
 )
 @sudo_users_only
 async def tag_all_users(_, message):
     if message.chat.id in SPAM_CHATS:
         return await message.reply_text(
-            "ᴛᴀɢɢɪɴɢ ᴘʀᴏᴄᴇss ɪs ᴀʟʀᴇᴀᴅʏ ʀᴜɴɴɪɴɢ ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ sᴛᴏᴘ sᴏ ᴜsᴇ /cancel"
+            "durdurmak istiyorsanız tgging işlemi zaten çalışıyor, bu yüzden kullanın /cancel yada /bitir /stop "
         )
     replied = message.reply_to_message
     if len(message.command) < 2 and not replied:
         await message.reply_text(
-            "** ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ ᴛᴏ ᴛᴀɢ ᴀʟʟ, ʟɪᴋᴇ »** `@all Hi Friends`"
+            "** Beğendiğiniz herkesi etiketlemek için biraz metin verin ÖRNEK »** `@utag MERHABA`"
         )
         return
     if replied:
@@ -86,10 +86,10 @@ async def tag_all_users(_, message):
 @app.on_message(
     filters.command(
         [
-            "stopmention",
+            "dur",
             "cancel",
-            "cancelmention",
-            "offmention",
+            "bitir",
+            "stop",
             "mentionoff",
             "cancelall",
         ],
@@ -105,8 +105,8 @@ async def cancelcmd(_, message):
             SPAM_CHATS.remove(chat_id)
         except Exception:
             pass
-        return await message.reply_text("**ᴛᴀɢɢɪɴɢ ᴘʀᴏᴄᴇss sᴜᴄᴄᴇssғᴜʟʟʏ sᴛᴏᴘᴘᴇᴅ!**")
+        return await message.reply_text("**Etiketleme işlemi başarıyla durduruldu!**")
 
     else:
-        await message.reply_text("**ɴᴏ ᴘʀᴏᴄᴇss ᴏɴɢᴏɪɴɢ!**")
+        await message.reply_text("**iyide iki gözüm etiket atmıyorum ki😅!**")
         return
