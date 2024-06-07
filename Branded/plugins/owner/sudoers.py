@@ -3,15 +3,15 @@ from ...console import SUDOERS
 from ...modules.mongo.sudoers import add_sudo, del_sudo
 
 
-@app.on_message(cdx(["addsudo", "as"]))
+@app.on_message(cdx(["addsudo", "yoneticiekle"]))
 @super_user_only
 async def add_sudo_user(client, message):
     try:
-        aux = await eor(message, "**🔄 Processing ...**")
+        aux = await eor(message, "**🔄 işleniyor ...**")
         if not message.reply_to_message:
             if len(message.command) != 2:
                 return await aux.edit(
-                    "Reply to a user's message or give username/user_id."
+                    "Bir kullanıcının mesajını yanıtlayın veya kullanıcı adını verin/user_id."
                 )
             user = message.text.split(None, 1)[1]
             if "@" in user:
@@ -19,12 +19,12 @@ async def add_sudo_user(client, message):
             user = await app.get_users(user)
             if user.id in SUDOERS:
                 return await aux.edit(
-                "{0} is already a sudo user.".format(user.mention)
+                "{0} zaten bir sudo kullanıcısı.".format(user.mention)
             )
             added = await add_sudo(user.id)
             if added:
                 SUDOERS.append(user.id)
-                await aux.edit("Added **{0}** to Sudo Users.".format(user.mention))
+                await aux.edit("eklenmiş **{0}** to Sudo Kullanıcıları.".format(user.mention))
             else:
                 await aux.edit("Failed")
             return
@@ -39,12 +39,12 @@ async def add_sudo_user(client, message):
         if added:
             SUDOERS.append(user_id)
             await aux.edit(
-                "Added **{0}** to Sudo Users.".format(
+                "eklenmiş **{0}** to Sudo kullanıcıları.".format(
                     message.reply_to_message.from_user.mention
                 )
             )
         else:
-            await aux.edit("Something wrong happened.")
+            await aux.edit("Ters şeyler oldu.")
         return
     except Exception as e:
         print("Error: `{e}`")
