@@ -17,14 +17,14 @@ async def pm_on_off(client, message):
     if query == "on":
         set_permit = await set_pm_permit(True)
         if set_permit:
-            return await aux.edit("PM Permit Turned On !")
-        return await aux.edit("PM Permit Already On !")
+            return await aux.edit("PM İzni Açıldı !")
+        return await aux.edit("PM İzni Açıldı !")
         
     elif query == "off":
         set_permit = await set_pm_permit(False)
         if set_permit:
-            return await aux.edit("PM Permit Turned Off !")
-        return await aux.edit("PM Permit Already Off !")
+            return await aux.edit("PM İzni Kapatıldı !")
+        return await aux.edit("Pm izni zaten kapalı !")
         
 
 
@@ -46,9 +46,9 @@ async def pm_approve(client, message):
                 flood[str(uid)] = 0
             except BaseException:
                 pass
-        await message.edit("Successfully Approved.")
+        await message.edit("Başarıyla Onaylandı")
     else:
-        await message.edit("This user already approved.")
+        await message.edit("Bu kullanıcı zaten onaylanmış.")
     await asyncio.sleep(2)
     return await message.delete()
 
@@ -60,10 +60,10 @@ async def pm_disapprove(client, message):
         reply = message.reply_to_message
         replied_user = reply.from_user
         if replied_user.is_self:
-            return await message.edit("You can't do that to yourself.")
+            return await message.edit("Bunu kendine yapamazsın.")
     permit = await del_approved_user(uid)
     if permit:
-        await message.edit("Successfully Disapproved.")
+        await message.edit("Başarıyla Onaylanmadı.")
     else:
         await message.edit("This user is not approved !")
     await asyncio.sleep(2)
@@ -76,13 +76,13 @@ async def block_user_func(client, message):
         user_id = message.chat.id
     elif message.chat.type != ChatType.PRIVATE:
         if not message.reply_to_message:
-            return await message.edit("Reply to user message.")
+            return await message.edit("Kullanıcı mesajını yanıtla.")
         reply = message.reply_to_message
         replied_user = reply.from_user
         if replied_user.is_self:
-            return await message.edit("You can't do that to yourself.")
+            return await message.edit("Bunu kendine yapamazsın.")
         user_id = replied_user.id
-    await message.edit("Successfully Block User!!!")
+    await message.edit("Kullanıcıyı Başarıyla Engelle!!!")
     await client.block_user(user_id)
 
 
@@ -92,11 +92,11 @@ async def unblock_user_func(client, message):
         user_id = message.chat.id
     elif message.chat.type != ChatType.PRIVATE:
         if not message.reply_to_message:
-            return await message.edit("Reply to user message.")
+            return await message.edit("Kullanıcı mesajını yanıtla.")
         reply = message.reply_to_message
         replied_user = reply.from_user
         if replied_user.is_self:
-            return await message.edit("You can't do that to yourself.")
+            return await message.edit("Bunu kendine yapamazsın.")
         user_id = replied_user.id
     await client.unblock_user(user_id)
     await message.edit("Unblock User Successfully !")
@@ -104,14 +104,14 @@ async def unblock_user_func(client, message):
 
 __NAME__ = "Guard"
 __MENU__ = f"""
-**🥀 An Advanced Security System
-To Protect From DM Spams ✨.**
+**🥀 Gelişmiş Güvenlik Sistemi
+DM Spamlarından Korunmak İçin ✨.**
 
 `.pmguard [`on`|off`] - Activate
-or Deactivate PM Guard Security.
+veya PM Guard Güvenliğini Devre Dışı Bırakın.
 
-`.approve` - Approve An User For
-Chat With in DM.
+`.approve` - Bir Kullanıcıyı Onaylayın
+DM'de Sohbet Edin.
 
 `.disapprove` - To Disapprove An
 User (Remove From Allowed List).
