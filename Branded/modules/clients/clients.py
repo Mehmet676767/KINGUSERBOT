@@ -105,41 +105,41 @@ async def sudo_users():
     
 
 async def run_async_clients():
-    LOGGER.info("Starting Userbot ...")
+    LOGGER.info("user bot başlatılıyor ...")
     await app.start()
-    LOGGER.info("Userbot Started.")
+    LOGGER.info("user bot başlatıldı.")
     try:
         await app.send_message(LOG_GROUP_ID, "**Userbot Started.**")
     except:
         pass
     try:
-        await app.join_chat("BRANDED_PAID_CC")
-        await app.join_chat("BRANDRD_BOT")
+        await app.join_chat("masaldestekkanal")
+        await app.join_chat("masaldestekkanal")
     except:
         pass
     if SESSION_STRING:
-        LOGGER.info("Starting Assistant ...")
+        LOGGER.info("bot başlatıyor ...")
         await ass.start()
-        LOGGER.info("Assistant Started.")
+        LOGGER.info("asistan başlatılıyor.")
         try:
-            await ass.send_message(LOG_GROUP_ID, "**Assistant Started.**")
+            await ass.send_message(LOG_GROUP_ID, "**Asistan başlatıldı.**")
         except:
             pass
         try:
-            await app.join_chat("BRANDED_PAID_CC")
-            await app.join_chat("BRANDRD_BOT")
+            await app.join_chat("masaldestekkanal")
+            await app.join_chat("masaldestekkanal")
         except:
             pass
-    LOGGER.info("Starting Helper Robot ...")
+    LOGGER.info("bot çalışıyor hocam ...")
     await bot.start()
-    LOGGER.info("Helper Robot Started.")
+    LOGGER.info("asistan çalışıyor hocam.")
     try:
-        await bot.send_message(LOG_GROUP_ID, "**Helper Robot Started.**")
+        await bot.send_message(LOG_GROUP_ID, "**bot başlatıldı.**")
     except:
         pass
-    LOGGER.info("Starting PyTgCalls Client...")
+    LOGGER.info("telegram başlatıldı ...")
     await call.start()
-    LOGGER.info("PyTgCalls Client Started.")
+    LOGGER.info("python telegram çalışıtı.")
     await sudo_users()
     
     
