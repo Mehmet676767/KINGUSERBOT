@@ -23,11 +23,10 @@ async def self_media(client, message):
 
 __NAME__ = "Self"
 __MENU__ = f"""
-**🥀 Download And Save Self\n» Destructed Photo Or Video
-To Your Saved Message ✨**
+**🥀 Kendinizi İndirin ve Kaydedin\n» Tahrip Edilen Fotoğraf veya Video
+Kayıtlı Mesajınıza ✨**
 
-`.op` - Use This Command By\nReplying On Self-Destructed
-Photo/Video.
-
+`.op` - Bu Komutu\nKendi Kendini Yok Edenlere Yanıt Vererek Kullanın
+Fotoğraf/Video.
 **🌿 More Commands:**\n=> [😋🥰, wow, super, 😋😍]
 """
