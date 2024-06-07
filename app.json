@@ -1,7 +1,7 @@
 {
-    "name": "Branded-Userbot",
-    "description": "Branded-Userbot is an advanced & powerful multi-featured Telegram userbot.",
-    "logo": "https://te.legra.ph/file/11cfa74175b590014bd16.jpg",
+    "name": "YANILGI-Userbot",
+    "description": "TELEGRAMIN EN GELİŞMİŞ USER BOTU.",
+    "logo": "https://graph.org/file/8c1d6e4dd204afe8b6f98.jpg",
     "keywords": [
         "genius-userbot",
         "telegram-userbot",
@@ -13,32 +13,32 @@
     "env": {
         "API_ID": {
             "description": "Enter your api id here.",
-            "value": "",
+            "value": "20584104",
             "required": true
         },
         "API_HASH": {
             "description": "Enter your api hash here.",
-            "value": "",
+            "value": "f325ee578444d70ad2d02b0673f94d3a",
             "required": true
         },
         "BOT_TOKEN": {
             "description": "Enter your bot token here",
-            "value": "",
+            "value": "7387514914:AAFCbnny8x8zYlG1DYNAazL2VRJyrN95jEI",
             "required": true
         },
         "STRING_SESSION": {
             "description": "Enter your pyrogram v2 string session here @BRANDEDSTRINGSESSION_BOT.",
-            "value": "",
+            "value": "BAGXyHkAY2jJjedgin8wUnbApItTOApRVfTvUTQyS-j39RHk6s4OQIggLRN970Scj3ZH6dSAB1MRBJLaoBLntzmsZmk7PpMNsNg5tQZVMQi6OcWT2KmxbDRo5Nw7nmNZdjSm6zOTaHG9gYlzo4nsZe7A9X4-9EYrp0ZpzUuQDFlXNqgwvP2Mj7wmnVx6LR8m8GMWeq4JemCOb0m8AEOdguEr0CAxo7Nrf1agSAJLnwN5EELA-wLXhUuOgvwBJP7bqrEhqzyCg5z60sVu_sqmqdMDOEEUU1xxkM81t4zFqqTPDjTYRTCU1nE5BHJ4YUtIJLzqRT9aeo42WOeNva4JQ_lylnIiWQAAAAGhFXjPAA",
             "required": true
         },
         "MONGO_DB_URL": {
             "description": "Enter your mongodb url here.",
-            "value": "",
+            "value": "mongodb+srv://kurt67143:nays@cluster0.vjg7bma.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
             "required": true
         },
         "LOG_GROUP_ID": {
             "description": "Enter your private log group id here.",
-            "value": "",
+            "value": "-1002065943011",
             "required": true
         }
     },
