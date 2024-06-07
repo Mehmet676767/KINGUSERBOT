@@ -2,8 +2,8 @@
 
 __NAME__ = "VcBot"
 __MENU__ = """
-**An Advanced High Quality Music
-And Video Player System.**
+**Gelişmiş Yüksek Kaliteli Müzik
+Ve Video Oynatıcı Sistemi.**
 
 `.aç` - sesliye katılın.
 `.ayril` - Stream VC'den Ayrıl.
