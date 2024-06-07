@@ -13,7 +13,7 @@ async def pause_stream(client, message):
         if a.status == "playing":
             await call.pause_stream(chat_id)
             await eor(message, "**Akış Duraklatıldı!**")
-        elif a.status == "son", "dur":
+        elif a.status == "pause":
             await eor(message, "**Zaten Duraklatıldı!**")
         elif a.status == "oynamıyorum":
             await eor(message, "**Hiçbir Şey Yayınlanmıyor!**")
